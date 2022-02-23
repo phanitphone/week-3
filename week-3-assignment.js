@@ -60,61 +60,56 @@ console.log(otherLast);
 //4. to access the first element of an array, use the index method. All arrays start with the index [0]. 
 let array2 = [2, 4, 6, 8];
 
-let firstElement = array2[0];
+let firstElement = array2[0];//assigning a variable that represents array at index 0.
 
 console.log(firstElement);
 
 
-//5.
+//5. Create a new array called nameLengths. Write a loop to iterate over the prev created names array and add the length. 
 var names = ["Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"];//creating an array of names.
 
 let namesLength = [];
 
 for (let i = 0; i < names.length; i++ ) {
     namesLength.push(names[i].length);
-
+//for loop used to iterate the elements in the array "names" and the .push method returns the array with the length in each element as the new elements.
 }
 
 console.log(namesLength); //return the numbers in array form. 
 
 
-
-
-
-//6.
-var names = ["Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"];//creating an array of names.
-let namesLength = 0;//THIS IS CHANGED TO INTEGER FOR THE SUM OF THE ARRAY. 
-
-for (let i = 0; i < names.length; i++ ) {
-    namesLength += names[i].length;
+//6. Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array. Print the result to the console.
+let namesLength = [3, 5, 3, 5, 4, 3];//new array from prev problem.
+let sumNames = 0;
+for (let i = 0; i < namesLength.length; i++ ) {
+    sumNames += namesLength[i];//for loop to add the elements in namesLength.
 
 }
 
-console.log(namesLength);
+console.log(sumNames);
 
-//7.
-function manyWords(word, n){
+
+//7. Write a function that takes two parameters, word and n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in ‘Hello’ and 3, I would expect the function to return ‘HelloHelloHello’).
+function manyWords(word, n){//calling a function manyWords to take in two parameters. 
     let tempword = "";
     for (let i = 0; i < n; i++){
-        tempword += word;
+        tempword += word;//for loop to repeat the string called in the function. 
     }
     return tempword;
 }
 console.log(manyWords("Hello",3));
 
 
-
-//8.
+//8. Write a function that takes two parameters, firstName and lastName, and returns a full name (the full name should be the first and the last name separated by a space).
 function fullName(firstName, lastName){
-    return firstName + " " + lastName;
+    return firstName + " " + lastName;//the values of firstName and lastName has to be strings.
 
 }
 
 fullName("John", "Smith");
 
 
-
-//9.
+//9. Write a function that takes an array of numbers and returns true if the sum of all the numbers in the array is greater than 100.
 var arr= [5, 8, 10, 40, 35, 15]
 function numbers(arr){
     sum = 0;
@@ -129,60 +124,66 @@ function numbers(arr){
     //     return false;
     // }
 
-    return sum > 100;
+    return sum > 100;//given the boolean operator, shortcuts can be made to reduce lines of code.
 }
 console.log(numbers(arr));
 
 
-//10.
+//10. Write a function that takes an array of numbers and returns the average of all the elements in the array.
 function calculate(array) {
-    return array.reduce((a, b) => a + b) / array.length;
-}
+    return array.reduce((a, b) => a + b) / array.length;//arrow function to shorten the function to add the array and divide by the length.
+}//the function calculate brings in an array, with that array, return the previous added to the current value, then divide by the length of array.
 
 console.log(calculate([24, 88, 12, 4]));
 
 
-//11.
+//11. Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array is greater than the average of the elements in the second array
 
-function arrayAbove(array1, array2) {
-    for (let i = 0; i < array1; i++) {
-         array1 = array1[i] / array1.length };
-    for (let i = 0; i < array2; i++) { 
-        array2 = array2[i] / array2.length };
-    console.log(array1);
-    console.log(array2);
-    if (array1 > array2) { 
-        return true;
+function array1And2Avg(array1, array2){//function with two parameters
+    if (array1.length == 0){
+        array1.push(0);// if statement to protect against an empty array. if the array is an empty array with no value, insert a value so that the length of the array be 1.
+    }
+    let sumA = 0;//defining a variable to find the sum of array 1
+    for (let i = 0; i < array1.length; i++) {
+         sumA += array1[i];//for loop to add the elements in the array 1
+    }
+    let sumB = 0;//defining a variable to find the sum of array 2
+    for (let i = 0; i < array2.length; i++) { 
+        sumB += array2[i]; //for loop to add the elements in the array 2
+    }
+    let avgA1 = sumA / array1.length;//defining variables that equal the quotient of the total sum over the length of the array.
+    let avgB2 = sumB / array2.length;
+    if (avgA1 > avgB2) { 
+        return true;//if statement to return true if the average of array 1 is greater than the average of array 2
     } 
     else {
         return false;
     }
 }
 
-console.log(arrayAbove([11, 4, 3, 6], [1, 2, 3]));
+console.log(array1And2Avg([20, 21, 22], [1, 2, 3]));
 
 
-//12.
+//12. Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
 
-function willBuyDrink(isHotOutside, moneyInPocket) {
-    if (isHotOutside && moneyInPocket >= 10.5){
+function willBuyDrink(isHotOutside, moneyInPocket) {//function with two parameters 
+    if (isHotOutside && moneyInPocket >= 10.5){// boolean statement to be true for both situations
         return true;
         
     }
     else {
         return false;
     }
-    // return isHotOutside && moneyInPocket >= 10.5;
-  }
+}
 
-willBuyDrink(true, 11.5);
+willBuyDrink(true, 11.5);//calling in true for isHotOutside and having $11.50 cents
 
 
-//13.
+//13. Create a function of your own that solves a problem. In comments, write what the function does and why you created it.
 
 function weeksLeft(totalWeeks, currentWeek) {
     return totalWeeks - currentWeek;
   }
 
-weeksLeft(18, 4);
+weeksLeft(18, 4);//this function called weeksLeft represents weeks left in the bootcamp. it takes the difference of the current week of the bootcamp from the total amount of weeks in the bootcamp and returns the amount of weeks left. 
 
