@@ -79,7 +79,7 @@ console.log(namesLength); //return the numbers in array form.
 
 
 //6. Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array. Print the result to the console.
-let namesLength = [3, 5, 3, 5, 4, 3];//new array from prev problem.
+// let namesLength = [3, 5, 3, 5, 4, 3];//new array from prev problem.
 let sumNames = 0;
 for (let i = 0; i < namesLength.length; i++ ) {
     sumNames += namesLength[i];//for loop to add the elements in namesLength.
