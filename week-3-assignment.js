@@ -186,4 +186,3 @@ function weeksLeft(totalWeeks, currentWeek) {
 
 weeksLeft(18, 4);
 
-//testtttt
